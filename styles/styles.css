@@ -14,17 +14,26 @@ body .main {
 }
 body .main__display {
   border: 1px solid blue;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
 }
 body .main__display__totalOperation {
   text-align: right;
   font-size: 1em;
 }
 body .main__inputArea {
+  display: flex;
   border: 1px solid green;
+  height: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
 }
 body .main__inputArea__keyedInText {
   padding-right: 5px;
-  text-align: right;
   font-size: 1em;
 }
 body .main__bg__buttons {
