@@ -10,33 +10,40 @@
   <h1>My Calculator</h1>
   <main class="main">
     <section class="main__display">
-        <h5>display of what to calculate</h5>
+        <h5 class="main__display__totalOperation"></h5>
     </section>
     <section class="main__inputArea">
-        <h3> keyed in text display</h3>
+        <h3 class="main__inputArea__keyedInText">0</h3>
     </section>
-    <section class="main__buttons">
-      <ul>        
-        <li>C</li>
-        <li>+/-</li>
-        <li>%</li>
-        <li>Divide</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>X</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>-</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>+</li>        
-        <li class="zero">0</li>
-        <li>.</li>
-        <li>=</li>
-      </ul>
+    <!--  button grid -->
+    <section class="main__bg"> 
+        <ul class="main__bg__buttons">  
+          <li class="main__bg__buttons__clear main__bg__buttons__symbol">C</li>
+          <li class="main__bg__buttons__sign main__bg__buttons__symbol">&#x2b/&#x2212</li>
+          <!-- Percent sign -->
+          <li class="main__bg__buttons__percent main__bg__buttons__symbol">&#x25</li>
+          <!-- Division sign -->
+          <li class="main__bg__buttons__operation">&#xf7</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(7)">7</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(8)">8</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(9)">9</li>
+          <!-- multiplication sign -->
+          <li class="main__bg__buttons__operation">&#xd7</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(4)">4</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(5)">5</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(6)">6</li>
+          <!-- Subtraction sign -->
+          <li class="main__bg__buttons__operation">&#x2212</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(1)">1</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(2)">2</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber(3)">3</li>
+          <!-- Addition sign -->
+          <li class="main__bg__buttons__operation" onclick="handleOperation('&#x2b')">&#x2b</li>        
+          <li class="zero main__bg__buttons__number" onclick="handleNumber(0)">0</li>
+          <li class="main__bg__buttons__number" onclick="handleNumber('.')">.</li>
+          <!-- Equal sign -->
+          <li class="main__bg__buttons__operation" onclick="calculate()">&#x3d</li>
+      </ul> 
     </section>
   </main>
 
