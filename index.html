@@ -33,7 +33,7 @@
           <li class="main__bg__buttons__number" onclick="handleNumber(5)">5</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(6)">6</li>
           <!-- Subtraction sign -->
-          <li class="main__bg__buttons__operation">&#x2212</li>
+          <li class="main__bg__buttons__operation" onclick="handleOperation('-')">&#x2212</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(1)">1</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(2)">2</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(3)">3</li>
@@ -42,7 +42,9 @@
           <li class="zero main__bg__buttons__number" onclick="handleNumber(0)">0</li>
           <li class="main__bg__buttons__number" onclick="handleNumber('.')">.</li>
           <!-- Equal sign -->
-          <li class="main__bg__buttons__operation" onclick="calculate()">&#x3d</li>
+          <li class="main__bg__buttons__operation equals" onclick="equalsClick()">&#x3d</li>
+          <!-- <li class="main__bg__buttons__operation" onclick="calculate('&#x3d')">&#x3d</li> -->
+          <!-- <li class="main__bg__buttons__operation" onclick="handleOperation('&#x3d')">&#x3d</li> -->
       </ul> 
     </section>
   </main>
