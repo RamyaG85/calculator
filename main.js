@@ -137,6 +137,7 @@ const handleNumber = ( num => {
 
 const handleOperation = (operation => {
   console.log("operation is called", operation);
+  equalsFlag = false;
   currOperation = operation;
   equalsButton.style.pointerEvents = "all";
   if(keyedInData.innerHTML.charAt(0) === "="){
@@ -172,7 +173,7 @@ const handleOperation = (operation => {
 })
 
 const calculate = () => {
-  console.log("Inside calculate func");
+  console.log("Inside calculate func");  
   currentValue = keyedInData.innerHTML;
   console.log("currentValue is ", currentValue);
   if(typeof(currentValue.charAt(currentValue.length-1)) != "number" && keyedInData.innerHTML.charAt(0) == "="){
