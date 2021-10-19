@@ -1,11 +1,18 @@
+*{
+  padding : 0;
+  margin : 0;
+}
+
 body{
   // height: 100vh;
-  width: 15%;
-  margin: 50px 200px;
-  background-color: yellow;
-  padding-left: 20%;
+  width: 90%;
+  // margin: 50px 50px;
+  background-color: greenyellow;
+  padding-left: 5%;
+  margin-top: 5%;
   h1{
     text-align: center;
+    padding-bottom: 20px;
   }
 .main{
   background-color: black;
@@ -82,17 +89,90 @@ body{
         // background-color: #B2BEB5;
         background-color:#B0B0B0;
       }    
-      }
-    
-    // &__sign{
-    //   color: black;
-    //   background-color: #B2BEB5;
-    // }
-    // &__sign{
-    //   color: black;
-    //   background-color: #B2BEB5;
-    // }
-    
+      }  
+  
   }
 }
+}
+
+@media screen and (min-width: 768px) {
+
+  body{
+    // height: 100vh;
+    width: 30%;
+    // margin: 50px 200px;
+    background-color: lightgreen;
+    // padding-left: 20%;
+    padding-left: 30%;
+  margin-top: 10%;
+  
+  .main{    
+    &__display{
+      border : 1px solid blue; 
+      height: 100px;
+      // display: flex;
+      // justify-content: flex-end;
+      // align-items: center;
+      // text-align: right;
+      &--totalOperation {  
+      text-align: right;
+      font-size: 2em; 
+      }
+    }
+    &__inputArea{
+      display: flex;
+      border : 1px solid green;
+      height: 70px; 
+    
+    &--keyedInText{
+      padding-right: 5px;      
+      font-size: 1em;
+    }
+  }
+
+}
+
+  }
+}
+
+@media screen and (min-width: 991px) {
+
+  body{  
+   
+  margin: 100px 200px;  
+  padding-left: 20%;
+    width: 20%;
+    // margin: 50px 200px;
+    background-color: lightcoral;
+    // padding-left: 20%;
+    // padding-left: 20%;
+  // margin-top: 10%;
+  
+  .main{    
+    &__display{
+      border : 1px solid blue; 
+      height: 100px;
+      // display: flex;
+      // justify-content: flex-end;
+      // align-items: center;
+      // text-align: right;
+      &--totalOperation {  
+      text-align: right;
+      font-size: 2em; 
+      }
+    }
+    &__inputArea{
+      display: flex;
+      border : 1px solid green;
+      height: 70px; 
+    
+    &--keyedInText{
+      padding-right: 5px;      
+      font-size: 1em;
+    }
+  }
+
+}
+
+  }
 }
