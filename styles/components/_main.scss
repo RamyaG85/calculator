@@ -18,7 +18,7 @@ body{
     justify-content: flex-end;
     align-items: center;
     text-align: right;
-    &__totalOperation {  
+    &--totalOperation {  
     text-align: right;
     font-size: 1em; 
     }
@@ -30,7 +30,7 @@ body{
     justify-content: flex-end;
     align-items: center;
     text-align: right;
-    &__keyedInText{
+    &--keyedInText{
       padding-right: 5px;      
       font-size: 1em;
     }
@@ -68,16 +68,16 @@ body{
         border-radius: 25px;
         padding-left: 20px;      
       }
-      &__operation{
+      &--operation{
         background-color: orange;
         color: white;
       }
-      &__number{
+      &--number{
         background-color: #383838;
         color: white;
         
       }
-      &__symbol{
+      &--symbol{
         color: black;
         // background-color: #B2BEB5;
         background-color:#B0B0B0;

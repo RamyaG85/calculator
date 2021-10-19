@@ -20,7 +20,7 @@ body .main__display {
   align-items: center;
   text-align: right;
 }
-body .main__display__totalOperation {
+body .main__display--totalOperation {
   text-align: right;
   font-size: 1em;
 }
@@ -32,7 +32,7 @@ body .main__inputArea {
   align-items: center;
   text-align: right;
 }
-body .main__inputArea__keyedInText {
+body .main__inputArea--keyedInText {
   padding-right: 5px;
   font-size: 1em;
 }
@@ -66,15 +66,15 @@ body .main__bg__buttons .zero {
   border-radius: 25px;
   padding-left: 20px;
 }
-body .main__bg__buttons__operation {
+body .main__bg__buttons--operation {
   background-color: orange;
   color: white;
 }
-body .main__bg__buttons__number {
+body .main__bg__buttons--number {
   background-color: #383838;
   color: white;
 }
-body .main__bg__buttons__symbol {
+body .main__bg__buttons--symbol {
   color: black;
   background-color: #B0B0B0;
 }
