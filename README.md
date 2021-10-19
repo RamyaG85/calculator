@@ -1,6 +1,5 @@
-# simple calculator
+# Simple Calculator
 -------------------
-
 This is a small project after learning the HTML, CSS, SCSS, BEM, Java Script and DOM interactions.
 
 About :
