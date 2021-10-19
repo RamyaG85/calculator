@@ -1,11 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  width: 15%;
-  margin: 50px 200px;
-  background-color: yellow;
-  padding-left: 20%;
+  width: 90%;
+  background-color: greenyellow;
+  padding-left: 5%;
+  margin-top: 5%;
 }
 body h1 {
   text-align: center;
+  padding-bottom: 20px;
 }
 body .main {
   background-color: black;
@@ -77,4 +83,55 @@ body .main__bg__buttons--number {
 body .main__bg__buttons--symbol {
   color: black;
   background-color: #B0B0B0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    width: 30%;
+    background-color: lightgreen;
+    padding-left: 30%;
+    margin-top: 10%;
+  }
+  body .main__display {
+    border: 1px solid blue;
+    height: 100px;
+  }
+  body .main__display--totalOperation {
+    text-align: right;
+    font-size: 2em;
+  }
+  body .main__inputArea {
+    display: flex;
+    border: 1px solid green;
+    height: 70px;
+  }
+  body .main__inputArea--keyedInText {
+    padding-right: 5px;
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 991px) {
+  body {
+    margin: 100px 200px;
+    padding-left: 20%;
+    width: 20%;
+    background-color: lightcoral;
+  }
+  body .main__display {
+    border: 1px solid blue;
+    height: 100px;
+  }
+  body .main__display--totalOperation {
+    text-align: right;
+    font-size: 2em;
+  }
+  body .main__inputArea {
+    display: flex;
+    border: 1px solid green;
+    height: 70px;
+  }
+  body .main__inputArea--keyedInText {
+    padding-right: 5px;
+    font-size: 1em;
+  }
 }
