@@ -19,8 +19,8 @@ body .main {
   font-family: Arial, Helvetica, sans-serif;
 }
 body .main__display {
-  border: 1px solid blue;
-  height: 70px;
+  border-bottom: 1px solid blue;
+  height: 60px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -32,7 +32,7 @@ body .main__display--totalOperation {
 }
 body .main__inputArea {
   display: flex;
-  border: 1px solid green;
+  border-bottom: 1px solid green;
   height: 50px;
   justify-content: flex-end;
   align-items: center;
@@ -93,7 +93,6 @@ body .main__bg__buttons--symbol {
     margin-top: 10%;
   }
   body .main__display {
-    border: 1px solid blue;
     height: 100px;
   }
   body .main__display--totalOperation {
@@ -101,8 +100,6 @@ body .main__bg__buttons--symbol {
     font-size: 2em;
   }
   body .main__inputArea {
-    display: flex;
-    border: 1px solid green;
     height: 70px;
   }
   body .main__inputArea--keyedInText {
@@ -118,7 +115,6 @@ body .main__bg__buttons--symbol {
     background-color: lightcoral;
   }
   body .main__display {
-    border: 1px solid blue;
     height: 100px;
   }
   body .main__display--totalOperation {
@@ -126,8 +122,6 @@ body .main__bg__buttons--symbol {
     font-size: 2em;
   }
   body .main__inputArea {
-    display: flex;
-    border: 1px solid green;
     height: 70px;
   }
   body .main__inputArea--keyedInText {
