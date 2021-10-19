@@ -19,16 +19,17 @@
     <section class="main__bg"> 
         <ul class="main__bg__buttons">  
           <li class="main__bg__buttons__clear main__bg__buttons__symbol">C</li>
+          <!-- <li class="main__bg__buttons__clear main__bg__buttons__symbol" onclick="clear()">C</li> -->
           <li class="main__bg__buttons__sign main__bg__buttons__symbol">&#x2b/&#x2212</li>
-          <!-- Percent sign -->
-          <li class="main__bg__buttons__percent main__bg__buttons__symbol">&#x25</li>
+          <!-- Modulus sign -->
+          <li class="main__bg__buttons__percent main__bg__buttons__symbol" onclick="handleOperation('&#x2b')">&#x25</li>
           <!-- Division sign -->
-          <li class="main__bg__buttons__operation">&#xf7</li>
+          <li class="main__bg__buttons__operation" onclick="handleOperation('&#xf7')">&#xf7</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(7)">7</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(8)">8</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(9)">9</li>
           <!-- multiplication sign -->
-          <li class="main__bg__buttons__operation">&#xd7</li>
+          <li class="main__bg__buttons__operation" onclick="handleOperation('*')">&#xd7</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(4)">4</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(5)">5</li>
           <li class="main__bg__buttons__number" onclick="handleNumber(6)">6</li>
