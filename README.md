@@ -12,16 +12,20 @@ Usage Instructions :
 ------------------
 - To perform operations like addition, subtraction, multiplication, and division, provide atleast 2 inputs by clicking on the buttons.  
 Whereas, for percentage and negation, one input along will the operator is sufficient.  
-- Input numbers are restricted to a length of 15 digits.  
+- Input numbers are **restricted** to a length of 15 digits.  
 - Clear button - Clears the display of previously calculated values and initializes the bar with zero.  
 - Negation - Add negation to the current number.  
 - 'Can't divide by zero' is displayed when a number is divided by zero.
-- BackSpace Operation - Press on the input number in the keyin area and the left most digit will be deleted.  
+- All the operation buttons are **disabled** after the 'divide by zero' operation until a clear/number key is pressed.
+- **Backspace Operation** - Press on the input number in the keyin area and the left most digit will be deleted.
+- After pressing an equals button, it is **disabled** till a number/operation key is pressed.  
+- Negation of 0 will always be zero.
 
 Operation & Display :
 -------------------
-- The calculator will perform the respective operation and return the output.  
-- The entire expression is displayed on the top most bar and the output will be displayed in the 2nd bar.
+- The calculator will perform the respective operation and return the result.  
+- The entire **expression** is displayed on the top most bar and the result will be displayed in the 2nd bar.
+- The display symbolizes an iphone Calculator.
 
 Number Representation : 
 ---------------------
