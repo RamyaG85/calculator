@@ -95,7 +95,6 @@ body .main__bg__buttons .equals {
 @media screen and (min-width: 768px) {
   body {
     width: 30%;
-    background-color: lightgreen;
     padding-left: 30%;
     margin-top: 10%;
   }
@@ -119,7 +118,6 @@ body .main__bg__buttons .equals {
     margin: 100px 200px;
     padding-left: 20%;
     width: 20%;
-    background-color: lightcoral;
   }
   body .main__display {
     height: 100px;
