@@ -16,7 +16,7 @@ Whereas, for percentage and negation, one input along will the operator is suffi
 - Clear button - Clears the display of previously calculated values and initializes the bar with zero.  
 - Negation - Add negation to the current number.  
 - 'Can't divide by zero' is displayed when a number is divided by zero.
-- BackSpace Operation - Press on the input number and the left most digit will be deleted.  
+- BackSpace Operation - Press on the input number in the keyin area and the left most digit will be deleted.  
 
 Operation & Display :
 -------------------
