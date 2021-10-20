@@ -1,62 +1,68 @@
+// This function is to remove comma and number check
+const commaReplaceIsNum = (num) => {
+  const replacedNum = num.replace(/,/g,"");
+  const convertedNum = isNaN(parseFloat(replacedNum))?0:parseFloat(replacedNum);
+  return convertedNum;
+}
+
 /* Addition function -- taking input arguments as 2 strings */
 const addition = (num1, num2) => {
-  num1 = num1.replace(/,/g,"");
-  num2 = num2.replace(/,/g,"");
-  console.log("numbers are ", num1, num2);
-  number1 = isNaN(parseFloat(num1))?0:parseFloat(num1);
-  number2 = isNaN(parseFloat(num2))?0:parseFloat(num2);
-  console.log(number1, number2);
+  number1 = commaReplaceIsNum(num1);
+  number2 = commaReplaceIsNum(num2);  
   const sum = number1 + number2;
-  console.log("sum is", sum);
+  // console.log("numbers are ", num1, num2);  
+  // console.log(number1, number2);
+  // console.log("sum is", sum);
   return sum;
 }
 
 /* Subtraction function -- taking input arguments as 2 strings */
 const subtraction = (num1, num2) => {
-  num1 = num1.replace(/,/g,"");
-  num2 = num2.replace(/,/g,"");
-  console.log("numbers are ", num1, num2);
-  number1 = isNaN(parseFloat(num1))?0:parseFloat(num1);
-  number2 = isNaN(parseFloat(num2))?0:parseFloat(num2);
+  number1 = commaReplaceIsNum(num1);
+  number2 = commaReplaceIsNum(num2);
   const difference = number1 - number2;
-  console.log("difference is", difference);
+  // console.log("numbers are ", num1, num2);
+  // console.log("difference is", difference);
   return difference;
 }
 
 /* Multiplication function -- taking input arguments as 2 strings */
 const multiply = (num1, num2) => {
-  num1 = num1.replace(/,/g,"");
-  num2 = num2.replace(/,/g,"");
-  console.log("numbers are ", num1, num2);
-  number1 = isNaN(parseFloat(num1))?0:parseFloat(num1);
-  number2 = isNaN(parseFloat(num2))?0:parseFloat(num2);
+  number1 = commaReplaceIsNum(num1);
+  number2 = commaReplaceIsNum(num2); 
   const product = number1 * number2;
-  console.log("Product is", product);
+  // console.log("numbers are ", num1, num2);
+  // console.log("product is ", product);
+  if (product == -0){ /* To handle -- No negate sign for zero */
+    return 0;
+  }
+  // console.log("Product is", product);
   return product;
 }
 
 /* Division function -- taking input arguments as 2 strings */
 const divide = (num1, num2) => {
-  num1 = num1.replace(/,/g,"");
-  num2 = num2.replace(/,/g,"");
-  console.log("numbers are ", num1, num2);
-  number1 = isNaN(parseFloat(num1))?0:parseFloat(num1);
-  number2 = isNaN(parseFloat(num2))?0:parseFloat(num2);
+  number1 = commaReplaceIsNum(num1);
+  number2 = commaReplaceIsNum(num2); 
   if(number2 === 0){
+    // Disable all operation buttons before returning divide by zero to avoid chain operations
+    for (let i = 0; i < operationButtons.length; i++) {      
+      operationButtons[i].style.backgroundColor = "antiquewhite";
+      operationButtons[i].style.pointerEvents = 'none';
+    }    
     return "Can't divide by zero";
   }
   const quotient = number1 / number2;
-  console.log("Quotient is", quotient);
+  // console.log("numbers are ", num1, num2);
+  // console.log("Quotient is", quotient);
   return quotient;
 }
 
 /* To represent number using commas --- using en-IN encoding */
 const numFormat = (num) => {  
-  console.log("num is ", num);
-  console.log("Number of num is ", Number(num));
-  console.log("type is ", typeof(num));
-  console.log("parseFloat of num is ", parseFloat(num));
-  console.log("parseInt of num is ", parseInt(num));
+  // console.log("num is ", num);
+  // console.log("Number of num is ", Number(num));
+  // console.log("type is ", typeof(num));  
   if (typeof(num) !== "number" && num.charAt(0) == "=") {
     num = num.replace("= ", "")
   } else if(typeof(num) == "string"){
@@ -64,7 +70,7 @@ const numFormat = (num) => {
       maximumFractionDigits: 10
       // maximumSignificantDigits : 16
     });
-    console.log("formattedNum is ", formattedNum);
+    // console.log("formattedNum is ", formattedNum);
     return formattedNum;
   } else {
     return num.toLocaleString("en-IN",{
@@ -79,17 +85,25 @@ let prevOperation = "";
 let currOperation = "";
 let result = "";
 let equalsFlag = false;
+let backspaceFlag = true;
 
 // storing some fields for DOM interactions
 keyedInData = document.querySelector(".main__inputArea--keyedInText");
 totalOperation = document.querySelector(".main__display--totalOperation");
 equalsButton = document.querySelector('.equals');
 clearButton = document.querySelector('.main__bg__buttons--clear');
+operationButtons = document.querySelectorAll('.divideByZero');
+symbolButtons = document.querySelectorAll('.main__bg__buttons--symbol');
+
 
 // This gets trigerred when any number key gets pressed 
 const handleNumber = ( num => {
   /* To reset the onclick for equals button */
   equalsButton.style.pointerEvents = "all";
+  // To enable the operation symbols after the result of 'divide by zero'
+  if(operationButtons[1].style.pointerEvents == "none"){
+    enableOperationSymbols();
+  }
   if (equalsFlag == true) { 
     clearMyData();
     equalsFlag = false;
@@ -109,8 +123,9 @@ const handleNumber = ( num => {
     // To append the digits to the existing keyin
     keyedInData.innerHTML += num;    
   }
-  console.log("keyedInData.innerHTML is", keyedInData.innerHTML);
-  if (num != ".") { /*To avoid changing the format representation of number after pressing the dot as there are no decimals yet */
+  // console.log("keyedInData.innerHTML is", keyedInData.innerHTML);
+  if (num != ".") { 
+    /*To avoid changing the format representation of number after pressing the dot as there are no decimals yet */
   keyedInData.innerHTML = numFormat(keyedInData.innerHTML);
   }
 })
@@ -121,6 +136,7 @@ const handleOperation = (operation => {
   equalsFlag = false; /* To disable the equals flag to avoid the clear to execute */
   currOperation = operation;
   equalsButton.style.pointerEvents = "all"; /* To reset the onclick for equals button */
+  // equalsButton.style.unset;  
   if(keyedInData.innerHTML.charAt(0) === "="){
     if((prevValue == keyedInData.innerHTML.replace("= ","")) && totalOperation.innerHTML !== ""){      
       totalOperation.innerHTML = prevValue;
@@ -199,7 +215,9 @@ const calculate = () => {
       case '\u00f7': /* Division operation */
         // console.log("division");      
         result = divide(prevValue, currentValue);
-        result = numFormat(result);  /* For repesenting the result with commas */     
+        if ( result != "Can't divide by zero") {
+        result = numFormat(result);  /* For repesenting the result with commas */  
+        }   
         keyedInData.innerHTML = "= " + result;
         prevValue = result;      
         totalOperation.style.fontSize = "1em";
@@ -239,14 +257,8 @@ const equalsClick = () => {
 
 /* To adjust the styling after the operation is performed and also sets the 'equalsFlag' to true for doing the clear operation if the chain operation is not followed next */
 const equalsAction = () => {
-  equalsFlag = true;  
-  // keyedInData.style.fontSize = "2em";
-  // totalOperation.style.fontSize = "1em";
-  // totalOperation.style.fontSize = (totalOperation.innerHTML.length >15)?"0.5em":"1em";  
-  keyedInData.style.fontSize = (keyedInData.innerHTML.length >15)?"1em":"2em";
-  // equalsButton.onclick = null;
-  // equalsButton.disabled = true;
-  // equalsButton.prop("disabled",true);
+  equalsFlag = true; 
+  keyedInData.style.fontSize = (keyedInData.innerHTML.length >15)?"1em":"2em";  
   equalsButton.style.pointerEvents = 'none';
 }
 
@@ -260,4 +272,32 @@ const clearMyData = () => {
   prevOperation = "";
   currOperation = "";
   result = "";
+  // To enable the operation symbols after the result of 'divide by zero'
+  if(operationButtons[1].style.pointerEvents == "none"){
+    enableOperationSymbols();
+  }
+}
+
+// Adding CSS for backspace operation on keyin area
+keyedInData.addEventListener("click", (event) => {
+  if (keyedInData.innerHTML.charAt(0) !== "=") {    
+    keyedInData.innerHTML = keyedInData.innerHTML.slice(0, -1);
+    if(keyedInData.innerHTML == "") {
+      keyedInData.innerHTML ="0";
+      }
+    else{
+      keyedInData.innerHTML = numFormat(keyedInData.innerHTML);
+      }
+    }    
+})
+
+// To enable the operation symbols after the result of 'divide by zero'
+const enableOperationSymbols = () => {
+  for (let i = 0; i < operationButtons.length; i++) {      
+    operationButtons[i].style.backgroundColor = "orange";
+    operationButtons[i].style.pointerEvents = 'all';    
+  }
+  for (let i = 0; i < symbolButtons.length; i++) {      
+    symbolButtons[i].style.backgroundColor = "#B0B0B0";        
+  }
 }
