@@ -110,7 +110,7 @@ const handleNumber = ( num => {
     keyedInData.innerHTML += num;    
   }
   console.log("keyedInData.innerHTML is", keyedInData.innerHTML);
-  if (num != ".") { /*To avoid changing the format representation right after preseing the dot as there are no decimals yet */
+  if (num != ".") { /*To avoid changing the format representation of number after pressing the dot as there are no decimals yet */
   keyedInData.innerHTML = numFormat(keyedInData.innerHTML);
   }
 })
