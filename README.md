@@ -40,3 +40,8 @@ Multiplication : 45.6 x 3 = 136.8
 Division : 100 / 5 = 20
 Percentage : 5% = 0.05
 Negation : 8 => -8
+
+A Quick Look :
+----------
+![image](https://user-images.githubusercontent.com/91462437/138027896-727f9a28-58d5-4edd-b886-13a3e0fd2973.png)
+![Calculator_snapshot](https://user-images.githubusercontent.com/91462437/138027980-a80a21fd-341d-4fa6-bd69-e2aaf0ef8f81.PNG)
