@@ -1,3 +1,5 @@
+@use "../base/abstracts.scss" as *;
+
 *{
   padding : 0;
   margin : 0;
@@ -40,11 +42,7 @@ body{
     &--keyedInText{
       padding-right: 5px;      
       font-size: 1em;
-    }
-    // &--keyedInText:{
-    //   padding-right: 5px;      
-    //   font-size: 1em;
-    // }
+    }    
   }
   &__bg{
       &__buttons{            
@@ -54,7 +52,7 @@ body{
         grid-gap: 10px;        
         list-style-type: none;
         border: 5px solid black;        
-       li{        
+       > li{        
         // border: 1px solid red;
         border-radius: 50%;        
         aspect-ratio: 1;        
@@ -63,16 +61,17 @@ body{
         justify-content: center;
         font-size: 2em;
         // width: 50px;
-        // height: 50px;
+        // height: 50px;        
       }
-      li:hover{
-          background-color:beige;
-          color: black;
+      li::hover{
+        background-color:beige;
+        color: $fontcolor-black;
       }
+      
       .zero{
         grid-column: 1 / span 2;
         display: flex;
-        background-color: #404040;
+        background-color: $bg-dark-grey;
         aspect-ratio: 2.1;        
         justify-content:flex-start;
         align-items: center;
@@ -80,19 +79,28 @@ body{
         padding-left: 20px;      
       }
       &--operation{
-        background-color: orange;
-        color: white;
+        background-color: $bg-orange;
+        color: $fontcolor-white;
       }
       &--number{
-        background-color: #383838;
-        color: white;
+        background-color: $bg-dark-grey;
+        color: $fontcolor-white;
         
       }
       &--symbol{
+        color: $fontcolor-black;
+        // background-color: #B2BEB5;
+        background-color:$bg-light-grey;
+      } 
+      &--clear{
         color: black;
         // background-color: #B2BEB5;
-        background-color:#B0B0B0;
-      }    
+        background-color: $bg-light-grey;
+      }
+      .equals{
+        background-color: $bg-orange;
+        color: $fontcolor-white;
+      }      
       }  
   
     }
