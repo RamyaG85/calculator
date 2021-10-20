@@ -15,7 +15,8 @@ Whereas, for percentage and negation, one input along will the operator is suffi
 - Input numbers are restricted to a length of 15 digits.  
 - Clear button - Clears the display of previously calculated values and initializes the bar with zero.  
 - Negation - Add negation to the current number.  
-- 'Can't divide by zero' is displayed when a number is divided by zero.  
+- 'Can't divide by zero' is displayed when a number is divided by zero.
+- BackSpace Operation - Press on the input number and the left most digit will be deleted.  
 
 Operation & Display :
 -------------------
