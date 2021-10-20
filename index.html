@@ -18,31 +18,31 @@
     <!--  button grid -->
     <section class="main__bg"> 
         <ul class="main__bg__buttons">  
-          <li class="main__bg__buttons--clear main__bg__buttons--symbol" onclick="clearMyData()">C</li>
-          <li class="main__bg__buttons--sign main__bg__buttons--symbol" onclick="opposite()">⁺∕₋</li>
+          <li class="main__bg__buttons--clear" onclick="clearMyData()">C</li>
+          <li class="main__bg__buttons--sign main__bg__buttons--symbol divideByZero" onclick="opposite()">⁺∕₋</li>
           <!-- Percent sign -->
-          <li class="main__bg__buttons--percent main__bg__buttons--symbol" onclick="handleOperation('%')">&percnt;</li>
+          <li class="main__bg__buttons--percent main__bg__buttons--symbol divideByZero" onclick="handleOperation('%')">&percnt;</li>
           <!-- Division sign -->
-          <li class="main__bg__buttons--operation" onclick="handleOperation('\u00f7')" data-cy=divide>&divide;</li>
-          <li class="main__bg__buttons--number" onclick="handleNumber(7)" data-cy=seven>7</li>
-          <li class="main__bg__buttons--number" onclick="handleNumber(8)">8</li>
+          <li class="main__bg__buttons--operation divideByZero" onclick="handleOperation('\u00f7')" data-cy=divide>&divide;</li>
+          <li class="main__bg__buttons--number seven" onclick="handleNumber(7)" data-cy=seven>7</li>
+          <li class="main__bg__buttons--number seven" onclick="handleNumber(8)">8</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(9)">9</li>
           <!-- multiplication sign -->
-          <li class="main__bg__buttons--operation" onclick="handleOperation('\u00d7')" data-cy=multiply>&times;</li>
+          <li class="main__bg__buttons--operation divideByZero" onclick="handleOperation('\u00d7')" data-cy=multiply>&times;</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(4)">4</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(5)" data-cy=five>5</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(6)">6</li>
           <!-- Subtraction sign -->
-          <li class="main__bg__buttons--operation" onclick="handleOperation('-')" data-cy=minus>&minus;</li>
+          <li class="main__bg__buttons--operation divideByZero" onclick="handleOperation('-')" data-cy=minus>&minus;</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(1)">1</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(2)" data-cy=two>2</li>
           <li class="main__bg__buttons--number" onclick="handleNumber(3)">3</li>
           <!-- Addition sign -->
-          <li class="main__bg__buttons--operation" onclick="handleOperation('&plus;')" data-cy=plus>&plus;</li>        
+          <li class="main__bg__buttons--operation divideByZero" onclick="handleOperation('&plus;')" data-cy=plus>&plus;</li>        
           <li class="zero main__bg__buttons--number" onclick="handleNumber(0)">0</li>
           <li class="main__bg__buttons--number" onclick="handleNumber('.')">.</li>
           <!-- Equal sign -->
-          <li class="main__bg__buttons--operation equals" onclick="equalsClick()">&equals;</li>          
+          <li class="equals" onclick="equalsClick()">&equals;</li>          
       </ul> 
     </section>
   </main>
